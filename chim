@@ -205,7 +205,7 @@ spawn(function()
   EquipWeapon(_G.SelectWeapon)
   AutoHaki()
   PosMon = v.HumanoidRootPart.CFrame
-  topos(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
+  topos(v.HumanoidRootPart.CFrame * Pos)
   v.HumanoidRootPart.CanCollide = false
   v.Humanoid.WalkSpeed = 0
   v.Head.CanCollide = false
@@ -2382,25 +2382,9 @@ if game.PlaceId == 2753915549 then
   end)
   end
   
--- Khởi tạo biến
 local PosX = 0
-local PosY = 30
-local PosZ = 0
-local radius = 30 -- bán kính của vòng tròn
-local angle = 0 -- góc khởi đầu
-
--- Hàm cập nhật vị trí
-function updatePosition(dt)
-    angle = angle + dt -- tăng góc theo thời gian
-    PosX = radius * math.cos(angle)
-    PosZ = radius * math.sin(angle)
-end
-
--- Giả lập vòng lặp cập nhật (giả sử dt là thời gian giữa các khung hình)
-local dt = 0.01 -- thời gian giữa các khung hình (ví dụ 0.01 giây)
-for i = 1, 1000 do
-    updatePosition(dt)
-end
+local PosY = 20
+local PosZ = 15
 
   Type = 1
   spawn(function()
